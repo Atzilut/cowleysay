@@ -6,4 +6,4 @@ You may want to do this: <br>
 `./cowleysay` <br>
 
 It looks like this: <br>
-![cowleysay](https://github.com/Atzilut/crowleysay/blob/main/crowleysay.png)
+![cowleysay](https://github.com/Atzilut/crowleysay/blob/main/cowleysay.png)
