@@ -1,10 +1,12 @@
 #!/usr/bin/env perl
 
+#93 93/93
+
 use strict;
 use warnings;
 use Text::Wrap;
 
-# List of Aleister Crowley quotes
+# Channeling the HGA
 my @quotes = (
     "Do what thou wilt shall be the whole of the Law.",
     "Love is the law, love under will.",
@@ -62,7 +64,9 @@ my $eyes = "oo";
 my $tongue = "  ";
 my $thoughts = "\\";
 
-# Invoking Cowley
+# 67
+# Invoking Aliester Cowley
+# 69
 my $cow = <<"EOC";
         $thoughts    / \\
          $thoughts  / * \\
@@ -74,3 +78,4 @@ my $cow = <<"EOC";
 EOC
 
 print $cow;
+
