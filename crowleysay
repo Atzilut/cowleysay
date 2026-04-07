@@ -62,7 +62,7 @@ my $eyes = "oo";
 my $tongue = "  ";
 my $thoughts = "\\";
 
-# Your embedded cow with the triangular hat
+# Invoking Cowley
 my $cow = <<"EOC";
         $thoughts    / \\
          $thoughts  / * \\
