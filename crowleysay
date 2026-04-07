@@ -1,0 +1,76 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Text::Wrap;
+
+# List of Aleister Crowley quotes
+my @quotes = (
+    "Do what thou wilt shall be the whole of the Law.",
+    "Love is the law, love under will.",
+    "Every man and every woman is a star.",
+    "The key of Joy is disobedience.",
+    "I was not content to believe in a personal devil and serve him.",
+    "Magick is the Science and Art of causing Change to occur in conformity with Will.",
+    "In the absence of will, the maximum of force is the maximum of weakness.",
+    "Science is always discovering odd scraps of magical wisdom.",
+    "A man who is doing his True Will has the inertia of the Universe to assist him.",
+    "Intolerance is evidence of impotence."
+);
+
+# Use command line argument if present, otherwise pick a random quote
+my $message = join(" ", @ARGV);
+if ($message eq "") {
+    $message = $quotes[rand @quotes];
+}
+
+$Text::Wrap::columns = 40;
+my @lines = split("\n", wrap("", "", $message));
+
+sub maxlen {
+    my $max = 0;
+    for (@_) {
+        $max = length($_) if length($_) > $max;
+    }
+    return $max;
+}
+
+my $max = maxlen(@lines);
+
+# Speech bubble
+print " " . "_" x ($max + 2) . "\n";
+
+for my $i (0..$#lines) {
+    if (@lines == 1) {
+        printf("< %-${max}s >\n", $lines[$i]);
+    }
+    elsif ($i == 0) {
+        printf("/ %-${max}s \\\n", $lines[$i]);
+    }
+    elsif ($i == $#lines) {
+        printf("\\ %-${max}s /\n", $lines[$i]);
+    }
+    else {
+        printf("| %-${max}s |\n", $lines[$i]);
+    }
+}
+
+print " " . "-" x ($max + 2) . "\n";
+
+# Cow variables
+my $eyes = "oo";
+my $tongue = "  ";
+my $thoughts = "\\";
+
+# Your embedded cow with the triangular hat
+my $cow = <<"EOC";
+        $thoughts    / \\
+         $thoughts  / * \\
+          $thoughts(_____)
+            ($eyes)\\_______
+            (__)\\       )\\/\\
+             $tongue ||----w |
+                ||     ||
+EOC
+
+print $cow;
